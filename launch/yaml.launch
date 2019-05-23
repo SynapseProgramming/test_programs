@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+<!--Placing the rosparam tag in the global namespace means that there are no namespace slashes-->
+<rosparam file="$(find test_programs)/param/test.yaml" command="load"/>
+
+
+<node pkg="test_programs" type="readyaml_node" name="yaml_test" output="screen" launch-prefix="gnome-terminal --command"/>
+<!--Placing the rosparam tag in a node means that there are namespace slashes-->
+</launch>
