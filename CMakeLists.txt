@@ -153,6 +153,7 @@ include_directories(
  add_executable(transform_publisher_class_node src/transform_publisher_class.cpp)
  add_executable(transform_subscriber_class_node src/transform_subscriber_class.cpp)
  add_executable(readyaml_class_node src/readyaml_class.cpp)
+ add_executable(readwrite_yaml_node src/readwrite_yaml.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -175,6 +176,7 @@ add_dependencies(transform_publisher_class_node ${${PROJECT_NAME}_EXPORTED_TARGE
 add_dependencies(transform_subscriber_class_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(class_subscriber_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(readyaml_class_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+add_dependencies(readwrite_yaml_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 
 ## Specify libraries to link a library or executable target against
@@ -218,6 +220,9 @@ target_link_libraries(class_subscriber_node
    ${catkin_LIBRARIES}
  )
 target_link_libraries(readyaml_class_node
+   ${catkin_LIBRARIES}
+ )
+target_link_libraries(readwrite_yaml_node
    ${catkin_LIBRARIES}
  )
 
