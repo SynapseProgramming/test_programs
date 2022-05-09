@@ -14,7 +14,6 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   actionlib_msgs
   actionlib
-  sound_play
   tf
 )
 
@@ -147,7 +146,6 @@ include_directories(
  add_executable(actionclient_callbacks_node src/actionclient_callbacks.cpp)
  add_executable(gui_actionclient_node src/gui_actionclient.cpp)
  add_executable(readyaml_node src/readyaml.cpp)
- add_executable(sound_test_node src/sound_test.cpp)
  add_executable(class_publisher_node src/class_publisher.cpp)
  add_executable(class_subscriber_node src/class_subscriber.cpp)
  add_executable(transform_publisher_class_node src/transform_publisher_class.cpp)
@@ -170,7 +168,6 @@ add_dependencies(actionclient_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_
 add_dependencies(actionclient_callbacks_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(gui_actionclient_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(readyaml_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-add_dependencies(sound_test_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(class_publisher_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(transform_publisher_class_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 add_dependencies(transform_subscriber_class_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
@@ -202,9 +199,6 @@ add_dependencies(readwrite_yaml_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catki
    ${catkin_LIBRARIES}
  )
  target_link_libraries(readyaml_node
-   ${catkin_LIBRARIES}
- )
- target_link_libraries(sound_test_node
    ${catkin_LIBRARIES}
  )
  target_link_libraries(class_publisher_node
